@@ -18,6 +18,10 @@ from   os.path import join
 
 from pycog.utils import get_here, mkdir_p
 
+#sys.path.append("C:\\Users\\etwes\\OneDrive\\Documents\\Fall_2024\\ComputationalNeuroscience\\pycog")
+
+os.environ['THEANO_FLAGS'] = 'base_compiledir=C:\\theano'
+
 #=========================================================================================
 # Command line
 #=========================================================================================
@@ -166,7 +170,10 @@ elif action == 'train':
     model = Model(modelfile=modelfile)
 
     # Avoid locks on the cluster
-    compiledir = join(theanopath, '{}-{}'.format(name, int(time.time())))
+    #compiledir = join(theanopath, '{}-{}'.format(name, int(time.time())))
+    #compiledir = "C:\Users\etwes\scratch\work\examples\sinewave"
+    compiledir = "C:\\work"
+    print(compiledir)
 
     # Train
     model.train(savefile, seed=seed, compiledir=compiledir, gpus=gpus)
@@ -230,6 +237,7 @@ elif action == 'structure':
     else:
         rnn = RNN(savefile, verbose=True)
 
+    print(rnn)
     # Sort order for recurrent units
     sortby = None
     if len(args) > 0:

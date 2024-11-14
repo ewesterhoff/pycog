@@ -14,13 +14,15 @@ if sys.version_info >= (3,):
     print("Please note that this software was only tested with Python 2.7.")
 
 # Determine whether Cython is available
-try:
-    from Cython.Distutils import build_ext
-except ImportError:
-    print("Cython is not available.")
-    use_cython = False
-else:
-    use_cython = True
+#try:
+#    from Cython.Distutils import build_ext
+#except ImportError:
+#    print("Cython is not available.")
+#    use_cython = False
+#else:
+#    use_cython = True
+
+use_cython = False
 
 # Build information
 if use_cython:

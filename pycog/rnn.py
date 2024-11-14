@@ -726,7 +726,7 @@ class RNN(object):
 
         plot = plots['Win']
 
-        RNN.plot_connection_matrix(plot, self.Win[order,:], smap_exc, smap_inh)
+        RNN.plot_connection_matrix(plot, Win[order,:], smap_exc, smap_inh)
 
         # Input labels
         inputs = self.p['structure'].get('inputs')
@@ -781,7 +781,8 @@ class RNN(object):
             plot = plots['Win_dist']
 
             # Label
-            plot.text_upper_right(r'$\boldsymbol{W}_\text{\textbf{in}}$',
+            #plot.text_upper_right(r'$\mathbf{W}_\text{\textbf{in}}$',
+            plot.text_upper_right("Win",
                                   fontsize=7, dy=-0.02)
 
             W       = self.Win
@@ -808,7 +809,8 @@ class RNN(object):
         plot = plots['Wrec_dist']
 
         # Label
-        plot.text_upper_right(r'$\boldsymbol{W}_\text{\textbf{rec}}$',
+        #plot.text_upper_right(r'$\mathbf{W}_\text{\textbf{rec}}$',
+        plot.text_upper_right("Wrec",
                               fontsize=7, dy=-0.02)
 
         W = self.Wrec
@@ -877,7 +879,8 @@ class RNN(object):
         plot = plots['Wout_dist']
 
         # Label
-        plot.text_upper_right(r'$\boldsymbol{W}_\text{\textbf{out}}$',
+        #plot.text_upper_right(r'$\mathbf{W}_\text{\textbf{out}}$',
+        plot.text_upper_right("Wout",
                               fontsize=7, dy=-0.02)
 
         W = self.Wout
