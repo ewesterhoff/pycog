@@ -1,0 +1,72 @@
+1. Install python 2.7 from distribution
+2. Copy & rename python.exe to python2.exe in C:\Python27
+3. Add C:\Python27 and C:\Python27\Scripts to path
+4. pip2 install Theano==0.7.0
+5. Install packages using pip2 install. Need these: https://github.com/Theano/Theano/blob/master/requirements.txt
+6. Modify output directories in do.py (windows path length requirements)
+7. Modify THEANO_FLAGS environment variable
+8. Profit
+
+C:\Users\etwes\OneDrive\Documents\Fall_2024\ComputationalNeuroscience\pycog\examples>python2 do.py models/sinewave train
+MODELFILE: C:\Users\etwes\OneDrive\Documents\Fall_2024\ComputationalNeuroscience\pycog\examples\models\sinewave.py
+ACTION:    train
+ARGS:      []
+SEED:      100
+C:\work
+[ Trainer.train ] In continuous mode, so we're setting n_gradient to 1.
+=> settings
+   | GPU:                       no
+   | init seed:                 100
+   | distribution (Win):        uniform
+   | distribution (Wrec):       gamma
+   | distribution (Wout):       uniform
+   | Nin/N/Nout:                0/100/1
+   | Dale's law:                E/I = 80/20
+   | initial spectral radius:   1.50
+   | train recurrent bias:      yes
+   | train output bias:         yes
+   | train initial conditions:  no
+   | sparseness (Wrec):         p = 0.99, p_plastic = 0.99
+   | E/I positivity function:   rectify
+   | hidden activation:         rectify
+   | output activation/loss:    linear/squared
+   | mode:                      continuous
+   | output mask:               no
+   | sigma_rec:                 0.05
+   | rectify inputs:            True
+   | gradient minibatch size:   1
+   | validation minibatch size: 50
+   | dt:                        20 ms
+   | tau:                       100 ms
+   | tau_in:                    100 ms
+   | learning rate:             0.01
+   | lambda_Omega:              2
+   | max gradient norm:         1
+   | (Theano) floatX:           float32
+   | (Theano) allow_gc:         False
+0 updates - Nov 14 2024 11:21:43 AM (0 hrs 0 mins 0 secs elapsed)
+| validation loss / RMSE: 0.424446 / 0.651495 ------------------------- NEW BEST (prev. best: inf)
+| Omega      (last iter) = n/a
+| grad. norm (last iter) = n/a
+| rho                    = 1.50000000
+10000 updates - Nov 14 2024 11:31:31 AM (0 hrs 9 mins 47 secs elapsed)
+| validation loss / RMSE: 0.004677 / 0.068389 ------------------------- NEW BEST (prev. best: 0.424446)
+| Omega      (last iter) = 0.02384614
+| grad. norm (last iter) = 0.12526833
+| rho                    = 1.85405374
+20000 updates - Nov 14 2024 11:41:05 AM (0 hrs 19 mins 22 secs elapsed)
+| validation loss / RMSE: 0.003641 / 0.060337 ------------------------- NEW BEST (prev. best: 0.004677)
+| Omega      (last iter) = 0.01435987
+| grad. norm (last iter) = 0.30375302
+| rho                    = 1.73924053
+30000 updates - Nov 14 2024 11:51:14 AM (0 hrs 29 mins 31 secs elapsed)
+| validation loss / RMSE: 0.002755 / 0.052492 ------------------------- NEW BEST (prev. best: 0.003641)
+| Omega      (last iter) = 0.00653279
+| grad. norm (last iter) = 0.69231898
+| rho                    = 2.30371833
+40000 updates - Nov 14 2024 12:00:52 PM (0 hrs 39 mins 9 secs elapsed)
+| validation loss / RMSE: 0.002292 / 0.047875 ------------------------- NEW BEST (prev. best: 0.002755)
+| Omega      (last iter) = 0.00644855
+| grad. norm (last iter) = 0.64980865
+| rho                    = 3.09193921
+Reached minimum error of 0.050000
